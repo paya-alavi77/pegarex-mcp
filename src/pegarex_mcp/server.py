@@ -23,10 +23,7 @@ from mcp.client.streamable_http import streamable_http_client
 from mcp.server.lowlevel import Server
 from mcp.server.stdio import stdio_server
 
-# The documented endpoint is .../api/mcp; the server itself lives one slash
-# further, and /api/mcp answers every request with a 307 to it. Going straight
-# to the final URL saves that extra round trip on each call.
-DEFAULT_URL = "https://pegarex.com.br/api/mcp/"
+DEFAULT_URL = "https://pegarex.com.br/api/mcp"
 
 
 def _version() -> str:
