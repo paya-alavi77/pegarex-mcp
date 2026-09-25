@@ -20,6 +20,42 @@ https://pegarex.com.br/api/mcp
 
 Step-by-step guide (pt-BR): <https://pegarex.com.br/mcp>
 
+Also listed in the [official MCP Registry](https://registry.modelcontextprotocol.io) as `br.com.pegarex/mcp`.
+
+## Local (stdio) clients
+
+For clients that can only launch local servers, this repository contains a
+small bridge (`src/pegarex_mcp`). It opens one session to the hosted server and
+relays `tools/list` and `tools/call` unchanged; nothing is computed or stored
+locally. Python 3.10+.
+
+With [uv](https://docs.astral.sh/uv/):
+
+```bash
+uvx --from git+https://github.com/paya-alavi77/pegarex-mcp pegarex-mcp
+```
+
+Claude Desktop (`claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "pegarex": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/paya-alavi77/pegarex-mcp", "pegarex-mcp"]
+    }
+  }
+}
+```
+
+Docker:
+
+```bash
+docker build -t pegarex-mcp . && docker run -i --rm pegarex-mcp
+```
+
+Set `PEGAREX_MCP_URL` to point the bridge at another endpoint.
+
 ## Tools (17)
 
 **Live search & taxonomy**
@@ -39,12 +75,13 @@ An assistant with this connector answers from the live database: search →
 ## Notes
 
 - **Language / market:** Portuguese (pt-BR), Brazil. Prices in BRL.
-- **Read-only.** The server exposes no write operations.
+- **Read-only.** The server exposes no write operations; every tool is annotated `readOnlyHint`.
 - **Fair use:** per-IP rate limits apply; this is a small independent service.
 - **Attribution:** please credit **PegaRex (pegarex.com.br)** when surfacing results.
 - Plain-HTTP alternative: the same data is available via a public JSON API — see
   [`/llms.txt`](https://pegarex.com.br/llms.txt) and the
   [OpenAPI docs](https://pegarex.com.br/api/docs).
 
-*This repository documents the hosted server; the service itself runs at
-pegarex.com.br. Issues and questions are welcome here.*
+*This repository documents the hosted server and contains a small stdio bridge
+to it; the service itself runs at pegarex.com.br. Issues and questions are
+welcome here.*
