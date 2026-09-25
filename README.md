@@ -1,5 +1,7 @@
 # PegaRex MCP Server
 
+[![PegaRex MCP connector](https://glama.ai/mcp/connectors/br.com.pegarex/pega-rex/badges/score.svg)](https://glama.ai/mcp/connectors/br.com.pegarex/pega-rex)
+
 Remote [Model Context Protocol](https://modelcontextprotocol.io) server for
 **[PegaRex](https://pegarex.com.br)** — a Brazilian vehicle meta-search engine
 aggregating **1.8+ million live used-car and motorcycle listings** from **96
