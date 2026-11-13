@@ -1,5 +1,10 @@
 # PegaRex MCP Server
 
+> **Turned off on 13 November 2026.** The PegaRex MCP server at `https://pegarex.com.br/api/mcp`
+> has been shut down and answers `410 Gone`, so neither the hosted endpoint nor this bridge works any
+> more, and the steps below are kept for reference only. PegaRex itself (search, price pages and
+> PegaFIPE) carries on at https://pegarex.com.br.
+
 [![PegaRex MCP connector](https://glama.ai/mcp/connectors/br.com.pegarex/pega-rex/badges/score.svg)](https://glama.ai/mcp/connectors/br.com.pegarex/pega-rex)
 
 Remote [Model Context Protocol](https://modelcontextprotocol.io) server for
